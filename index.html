@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mupitsu Clips</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: #0b0b12; color: #e8e8f0; }
+  main { max-width: 720px; margin: 0 auto; padding: 64px 24px; }
+  h1 { font-size: 40px; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .tag { color: #9a9ab0; margin: 0 0 40px; }
+  .mark { display: inline-flex; align-items: center; justify-content: center;
+          width: 64px; height: 64px; border-radius: 16px; margin-bottom: 24px;
+          background: linear-gradient(160deg, #7c3aed, #22d3ee); color: #0b0b12;
+          font-weight: 800; font-size: 34px; }
+  h2 { font-size: 20px; margin: 40px 0 8px; }
+  a { color: #22d3ee; }
+  footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid #23233a;
+           color: #9a9ab0; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark">M</div>
+  <h1>Mupitsu Clips</h1>
+  <p class="tag">Twitch highlights, cut into vertical clips.</p>
+
+  <p><strong>Mupitsu Clips</strong> is a personal publishing tool. It takes clip
+  highlights from Twitch channels we own or that have authorised us, formats them
+  as vertical videos, and publishes them to our own TikTok account
+  <code>@mupitsu</code> through the official TikTok Content Posting API.</p>
+
+  <h2>What the tool does</h2>
+  <ul>
+    <li>authorises once with TikTok (Login Kit) for the account we own;</li>
+    <li>uploads a finished vertical video (MP4, H.264) as a direct post;</li>
+    <li>sends the caption and privacy level chosen by the account owner;</li>
+    <li>keeps the account owner in control: nothing is posted without that
+        explicit authorisation.</li>
+  </ul>
+
+  <h2>Scope</h2>
+  <p>The tool only ever acts on the single TikTok account that authorised it.
+  It does not read other users' data, does not post on anyone else's behalf and
+  has no public sign-up.</p>
+
+  <footer>
+    <a href="./terms.html">Terms of Service</a> ·
+    <a href="./privacy.html">Privacy Policy</a> ·
+    <a href="mailto:contact@mupitsu.clips">contact@mupitsu.clips</a>
+    <p>© 2026 Mupitsu Clips</p>
+  </footer>
+</main>
+</body>
+</html>

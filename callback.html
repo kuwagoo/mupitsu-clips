@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authorisation — Mupitsu Clips</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; font: 16px/1.7 system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: #0b0b12; color: #e8e8f0; }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px; }
+  h1 { font-size: 28px; margin: 0 0 16px; }
+  code { display: block; padding: 14px 16px; margin: 8px 0 20px; border-radius: 10px;
+         background: #15152a; border: 1px solid #26264a; word-break: break-all;
+         font: 13px/1.5 ui-monospace, Consolas, monospace; }
+  .warn { color: #f5b642; }
+  a { color: #22d3ee; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Authorisation</h1>
+  <p id="state">Reading the callback…</p>
+
+  <p><strong>authorization code</strong> (valid a few minutes, single use)</p>
+  <code id="code">—</code>
+
+  <p><strong>state</strong></p>
+  <code id="statev">—</code>
+
+  <p class="warn">Never share this page's URL: it contains a one-time code.
+  Close the tab once the code has been copied.</p>
+
+  <p><a href="./index.html">← Mupitsu Clips</a></p>
+</main>
+<script>
+  (function () {
+    var p = new URLSearchParams(location.search);
+    var code = p.get("code");
+    var state = p.get("state");
+    var err = p.get("error");
+    var msg = document.getElementById("state");
+    if (err) {
+      msg.textContent = "TikTok returned an error: " + err +
+        (p.get("error_description") ? " — " + p.get("error_description") : "");
+    } else if (code) {
+      msg.textContent = "Authorisation received. Copy the values below into the pipeline.";
+    } else {
+      msg.textContent = "No code in the URL. Start the authorisation again from the app.";
+    }
+    document.getElementById("code").textContent = code || "—";
+    document.getElementById("statev").textContent = state || "—";
+  })();
+</script>
+</body>
+</html>
